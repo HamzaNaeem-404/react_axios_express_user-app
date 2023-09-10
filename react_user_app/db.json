@@ -27,13 +27,13 @@
     {
       "id": 5,
       "name": "Qazi Mansoor",
-      "email": "231qazi@gmail.com",
+      "email": "123qazi@gmail.com",
       "phone": "03344260561"
     },
     {
       "id": 6,
       "name": "Umer Farooq",
-      "email": "121umer@gmail.com",
+      "email": "123umer@gmail.com",
       "phone": "023545999"
     },
     {
@@ -59,12 +59,6 @@
       "email": "yousafbabry86@yahoo.com",
       "phone": "03344263451",
       "id": 10
-    },
-    {
-      "name": "test-Nodemail",
-      "email": "2020F-mulbsswe-059@mul.edum",
-      "phone": "03344260563",
-      "id": 11
     }
   ]
 }

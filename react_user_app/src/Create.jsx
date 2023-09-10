@@ -7,7 +7,9 @@ function Create() {
     const [values, setValues] = useState({
         name: '',
         email: '',
-        phone: ''
+        password:'', 
+        role:''
+        // phone: ''
     })
 
     const navigate = useNavigate();
@@ -15,9 +17,9 @@ function Create() {
     const handleSubmit = (event) => {
         event.preventDefault();
     
-        axios.post('http://localhost:3000/users', values)
+        axios.post('http://localhost:3301/user', values)
             .then((res) => {
-                toast.success(res.data.message);
+                console.log(res.data);
                 navigate('/');
             })
             .catch(err => console.log(err));
@@ -41,11 +43,27 @@ function Create() {
                     <input type='email' name='email' className='form-control' placeholder='Enter Email'
                     onChange={e => setValues({...values, email: e.target.value})}/>
                 </div>
-                <div className='mb-3'>
+                <div className='mb-2'>
+                    <label htmlFor='name'>Password:</label>
+                    <input type='password' name='password' className='form-control' placeholder='Enter Password'
+                    onChange={e => setValues({...values, password: e.target.value})}/>
+                </div>
+
+                
+                <div className='mb-2'>
+                <label for="role">Your role:</label>
+
+                  <select name="role" id="role" onChange={e => setValues({...values, role: e.target.value})}>
+                 <option value="user">user</option>
+                 <option value="admin">admin</option>
+                 </select>
+                    
+                </div>
+                {/* <div className='mb-3'>
                     <label htmlFor='name'>Phone:</label>
                     <input type='phone' name='phone' className='form-control' placeholder='Enter Phone'
                     onChange={e => setValues({...values, phone: e.target.value})}/>
-                </div>
+                </div> */}
                 <button className='btn btn-success'>Submit</button>
                 <Link to="/" className='btn btn-primary ms-3'>Back</Link>
             </form>

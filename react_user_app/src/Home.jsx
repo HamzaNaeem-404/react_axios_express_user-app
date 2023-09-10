@@ -8,22 +8,31 @@ function Home() {
 
     const [data, setData]=useState([])
 
-        const navigate = useNavigate();
+        // const navigate = useNavigate();
        useEffect(()=>{
-        axios.get('http://localhost:3000/users')
+        axios.get('http://localhost:3301/users')
         .then(res => setData(res.data))
         .catch(err => console.log(err))
     }, [])
 
-    const handleDelete = (id)=>{
-        const confirm = window.confirm("Would you like to Delete?");
-        if(confirm){
-            axios.delete('http://localhost:3000/users/'+id).
-            then(res=>{
-                location.reload();
-            }).catch(err => console.log(err));
+    const handleDelete =  (id) => {
+        const confirmDelete = window.confirm("Would you like to Delete?");
+        
+        if (confirmDelete) {
+            try {
+                 axios.get('http://localhost:3301/user-delete/'+ id);
+                 toast.error("User deleted");
+                 setTimeout(() => {
+                     location.reload();
+                }, 1300);
+     
+            } catch (err) {
+                console.log(err);
+            }
         }
-      }
+}
+    
+    
 
   return (
     <div className='d-flex flex-column justify-content-center align-items-center bg-light vh-100'>
@@ -40,7 +49,7 @@ function Home() {
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Phone</th>
+                {/* <th>Phone</th> */}
                 <th>Action</th>
             </tr>
         </thead>
@@ -48,15 +57,15 @@ function Home() {
         <tbody>
             {
                 data.map((d, i)=> (
-                    <tr key={i}>
-                        <td>{d.id}</td>
+                    <tr key={d._id}>
+                        <td>{i+1}</td>
                         <td>{d.name}</td>
                         <td>{d.email}</td>
-                        <td>{d.phone}</td>
+                        {/* <td>{d.phone}</td> */}
                         <td>
-                            <Link to={`/read/${d.id}`} className='btn btn-sm btn-info me-2'>Read</Link>
-                            <Link to={`/update/${d.id}`} className='btn btn-sm btn-primary me-2'>Edit</Link>
-                            <button onClick={e => handleDelete(d.id)} className='btn btn-sm btn-danger'>Delete</button>
+                            <Link to={`/read/${d._id}`} className='btn btn-sm btn-info me-2'>View</Link>
+                            <Link to={`/update/${d._id}`} className='btn btn-sm btn-primary me-2'>Edit</Link>
+                            <button onClick={e => handleDelete(d._id)} className='btn btn-sm btn-danger'>Delete</button>
                         </td>
                     </tr>
                 ))
