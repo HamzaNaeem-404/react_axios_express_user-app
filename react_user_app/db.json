@@ -1,0 +1,70 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Hamza Naeem",
+      "email": "545hamza@gmail.com",
+      "phone": "023545999"
+    },
+    {
+      "id": 2,
+      "name": "Tala Manshoor",
+      "email": "talal@gmail.com",
+      "phone": "023545999"
+    },
+    {
+      "id": 3,
+      "name": "Muneeb Ahmed",
+      "email": "muneeb@gmail.com",
+      "phone": "023545999"
+    },
+    {
+      "id": 4,
+      "name": "Zain Ahmed",
+      "email": "789zain@gmail.com",
+      "phone": "03174597197"
+    },
+    {
+      "id": 5,
+      "name": "Qazi Mansoor",
+      "email": "231qazi@gmail.com",
+      "phone": "03344260561"
+    },
+    {
+      "id": 6,
+      "name": "Umer Farooq",
+      "email": "121umer@gmail.com",
+      "phone": "023545999"
+    },
+    {
+      "id": 7,
+      "name": "Mubarra Abid",
+      "email": "mubbarra@gmail.com",
+      "phone": "023545999"
+    },
+    {
+      "id": 8,
+      "name": "Ayesha Khalid",
+      "email": "ayesha@gmail.com",
+      "phone": "023545999"
+    },
+    {
+      "id": 9,
+      "name": "Faizan Gaba",
+      "email": "faizan@gmail.com",
+      "phone": "023545999"
+    },
+    {
+      "name": "Yousaf",
+      "email": "yousafbabry86@yahoo.com",
+      "phone": "03344263451",
+      "id": 10
+    },
+    {
+      "name": "test-Nodemail",
+      "email": "2020F-mulbsswe-059@mul.edum",
+      "phone": "03344260563",
+      "id": 11
+    }
+  ]
+}
